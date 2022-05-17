@@ -1,2 +1,3 @@
-# soap2day-enhancements
+# Soap2Day Enhancements
+
 Soap2Day Enhancements
