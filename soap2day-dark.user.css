@@ -151,7 +151,6 @@ url-prefix("https://soapgate.org")
   }
 
   /* Navbar Search */
-
   .navbar-form {
     margin: 0;
   }
@@ -250,9 +249,11 @@ url-prefix("https://soapgate.org")
     font-size: 16px;
     line-height: 2;
   }
+
   .col-sm-12.col-md-6.col-lg-4 b {
     color: #fff;
   }
+
   /* Season Episodes Display POC */
   #divPlayerSelect + .col-sm-12.col-lg-12 + .col-sm-12.col-lg-12 {
     display: flex;
@@ -260,14 +261,39 @@ url-prefix("https://soapgate.org")
     justify-content: flex-end;
     gap: 1rem;
   }
+
   .col-sm-12.col-lg-12 > .col-sm-12 {
     width: auto;
   }
+
   .col-sm-12.col-lg-12 > .col-sm-12 > div {
     display: flex;
     flex-direction: column-reverse;
   }
+
   .col-sm-12.col-lg-12 > .col-sm-12 > .col-sm-12.col-md-6.col-lg-4 {
     width: 100%;
+  }
+
+  /* Video Player */
+  .col-sm-12.col-lg-12 > .col-sm-12 > .panel-player {
+    width: 100%;
+    min-width: 95vw;
+    height: auto;
+    min-height: 50vh;
+  }
+
+  div#player {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
   }
 }
