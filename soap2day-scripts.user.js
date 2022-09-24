@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name           Soap2Day Enhanced Scripts
-// @version        1.0.0
-// @description    Soap2Day - Autoplay shows and movies in fullscreen mode when page loads.
+// @name           Soap2Day Enhancements Scripts
+// @version        1.0.1
+// @description    Soap2Day - Various functions to enhance Soap2Day like autoplay, fullscreen mode and semantic titles.
 // @author         Schalk Burger
 // @include        https://soap2day.to/*
 // @include        https://soap2day.im/*
@@ -43,6 +43,7 @@
 
 window.addEventListener("load", (event) => {
   console.log("SOAP2DAY Scripts Loaded");
+  // Auto click Home button
   const homeButton = document.getElementById("btnhome");
   if (typeof homeButton != "undefined" && homeButton != null) {
     // Exists.
@@ -52,5 +53,20 @@ window.addEventListener("load", (event) => {
       document.dispatchEvent(new Event("click"));
       document.querySelector("#btnhome").dispatchEvent(new Event("click"));
     }, "2000");
+  }
+  // Set episode title
+  const episodeTitleSelector = document.querySelector(".col-sm-12.col-lg-12 > .alert.alert-info");
+  const episodeTitleSelectorContent = episodeTitleSelector.textContent;
+  if (typeof episodeTitleSelector != "undefined" && episodeTitleSelector != null) {
+    // Exists.
+    console.log("Episode title exists");
+    const episodeArray = episodeTitleSelectorContent.split(">>");
+    let showName = episodeArray[2];
+    let episodeTitle = episodeArray[episodeArray.length - 1];
+    console.log("Episode title:", episodeTitle);
+
+    setTimeout(() => {
+      document.title = showName + ":" + episodeTitle;
+    }, "500");
   }
 });
