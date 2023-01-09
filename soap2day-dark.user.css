@@ -31,7 +31,7 @@ url-prefix("https://soapgate.org")
   }
 
   ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
+    border-radius: 4px;
     background-color: #bcbcbc;
     border: 5px solid var(--color-primary) !important;
   }
@@ -47,12 +47,6 @@ url-prefix("https://soapgate.org")
   }
 
   /* Enter */
-
-  .idc0_345 body {
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center; */
-  }
 
   .idc0_345 .panel {
     border-radius: 10px;
@@ -335,6 +329,22 @@ url-prefix("https://soapgate.org")
     gap: 1rem;
     overflow: hidden;
     overflow-x: scroll;
+  }
+
+  #divPlayerSelect + .col-sm-12.col-lg-12 + .col-sm-12.col-lg-12::-webkit-scrollbar-track {
+    background-color: var(--color-secondary) !important;
+  }
+
+  /* Season Episodes Display POC */
+  #divPlayerSelect + .col-sm-12.col-lg-12 + .col-sm-12.col-lg-12::-webkit-scrollbar {
+    background-color: var(--color-primary) !important;
+    height: 24px;
+  }
+
+  #divPlayerSelect + .col-sm-12.col-lg-12 + .col-sm-12.col-lg-12::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: #bcbcbc;
+    border: 0px solid var(--color-primary) !important;
   }
 
   .col-sm-12.col-lg-12 > .col-sm-12 > div {
