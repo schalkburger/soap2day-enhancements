@@ -375,7 +375,12 @@ url-prefix("https://soapgate.org")
     overflow-x: scroll;
     flex-direction: row-reverse;
   }
+
   .alert.alert-info-ex.col-sm-12 .col-sm-12.col-md-6.col-lg-4 {
     width: 100%;
+  }
+
+  .divDark + .col-sm-8 .panel-body {
+    padding: 0;
   }
 }
