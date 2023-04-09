@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name           Soap2Day Enhancements Scripts
-// @version        1.0.1
+// @version        1.1.0
 // @description    Soap2Day - Various functions to enhance Soap2Day like autoplay, fullscreen mode and semantic titles.
 // @author         Schalk Burger
 // @include        https://soap2day.to/*
@@ -34,11 +34,42 @@
     const newScript = document.createElement("script");
     const inlineScript = document.createTextNode(
       "jwplayer().play();jwplayer().setFullscreen(true);"
+      // "jwplayer().play();jwplayer().on('play', function(e) { document.querySelector('video).requestPictureInPicture(); })"
+      // "jwplayer().play();jwplayer().pause()"
     );
     newScript.appendChild(inlineScript);
     const target = document.body;
     target.appendChild(newScript);
+
+    // player.on("play", function (e) {
+    //   console.log("Video playing");
+    //   let videoElement = document.querySelector("video");
+    //   videoElement.requestPictureInPicture();
+
+    //   // videoElement.addEventListener("loadedmetadata", async () => {
+    //   //   await videoElement.requestPictureInPicture();
+    //   // });
+    // });
   });
+  // checkElement(".jwplayer").then((element) => {
+  //   console.log(".jwplayer exists");
+  //   const player = document.getElementById("player");
+  //   if (typeof player != "undefined" && player != null) {
+  //     // Exists.
+  //     console.log("Player exists");
+  //     player.classList.add("focus");
+  //     setTimeout(() => {
+  //       console.log("Player setTimeout");
+  //       document.dispatchEvent(new Event("click"));
+  //       document.querySelector("#player").dispatchEvent(new Event("click"));
+  //       let videoElement = document.querySelector("video");
+  //       videoElement.onloadedmetadata = function () {
+  //         enterPictureInPicture(document.querySelector("video"));
+  //         videoElement.requestPictureInPicture();
+  //       };
+  //     }, "1000");
+  //   }
+  // });
 })();
 
 window.addEventListener("load", (event) => {
@@ -59,11 +90,11 @@ window.addEventListener("load", (event) => {
   const episodeTitleSelectorContent = episodeTitleSelector.textContent;
   if (typeof episodeTitleSelector != "undefined" && episodeTitleSelector != null) {
     // Exists.
-    console.log("Episode title exists");
+    // console.log("Episode title exists");
     const episodeArray = episodeTitleSelectorContent.split(">>");
     let showName = episodeArray[2];
     let episodeTitle = episodeArray[episodeArray.length - 1];
-    console.log("Episode title:", episodeTitle);
+    // console.log("Episode title:", episodeTitle);
 
     setTimeout(() => {
       document.title = showName + ":" + episodeTitle;
